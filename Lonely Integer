@@ -1,0 +1,37 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main()
+{
+    int b,a[100],n,i,count[100]={0},j;
+    scanf("%d",&n);
+    if(n==1)
+    {
+        scanf("%d",&b);
+        printf("%d",b);
+    }
+    else
+    {
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&a[i]);
+        }
+        for(i=0;i<n;i++)
+        {
+            j=a[i];
+            count[j]+=1;
+        
+        }
+        for(j=0;j<100;j++)
+        {
+            if(count[j]==1)
+                printf("%d",j);
+        }
+    }
+    return 0;
+}
