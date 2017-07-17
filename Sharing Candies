@@ -1,0 +1,51 @@
+Sharing candies
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+long getCandies(long n, long p) {
+    
+    int factor_n[100];
+    int temp=1;
+    for(int i=1;i<=n;i++)
+    {
+        if((n%i)==0)
+        {
+            factor_n[temp]=i;
+            temp+=1;  
+        }
+    }
+    long ret;
+    ret = factor_n[p];
+    return ret;
+
+}
+
+int main() {
+    char *output_path = getenv("OUTPUT_PATH");
+    FILE *f;
+    if (output_path != NULL) {
+    	f = fopen(output_path, "w");
+    }
+    else {
+    	f = stdout;
+    }
+    
+    long res;
+    long _n;
+    scanf("%ld", &_n);
+    
+    long _p;
+    scanf("%ld", &_p);
+    
+    res = getCandies(_n, _p);
+    fprintf(f, "%ld\n", res);
+    
+    fclose(f);
+    return 0;
+}
