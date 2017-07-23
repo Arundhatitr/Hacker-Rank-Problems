@@ -1,0 +1,25 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main()
+{
+    int N,i;
+    long int sum=0;
+    scanf("%d",&N);
+    long int ar[N];
+    for(i=0;i<N;i++)
+    {
+        scanf("%li",&ar[i]);
+    }  
+    for(i=0;i<N;i++)
+    {
+        sum+=ar[i];
+    }
+    printf("%li",sum);
+   
+}
